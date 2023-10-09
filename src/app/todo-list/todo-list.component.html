@@ -1,0 +1,7 @@
+<p-card title="Todo List">
+    <div *ngFor="let todo of todos">
+        <p-checkbox [(ngModel)]="todo.completed" [binary]="true"></p-checkbox>
+        <span [ngClass]="{'completed': todo.completed}">{{ todo.task }}</span>
+    </div>
+    <input [(ngModel)]="newTask" pInputText placeholder="New task..." (keydown.enter)="addTask()" />
+</p-card>
